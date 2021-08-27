@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\bembalg\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\bembalg\\.nuget\\packages"
-    ]
-  }
-}
