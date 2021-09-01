@@ -1,0 +1,47 @@
+<button class="btn btn-success" (click)="getBtn1()" >Add Course</button>
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Course ID</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Course Description</th>
+        <th scope="col">Course Duration</th>
+        <th scope="col">Course Status</th>
+        <th scope="col">Action</th>
+        
+        <!-- <th scope="col">Course Price</th>
+        <th scope="col">Course Description</th>
+        <th scope="col">Course Status</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let c of courses">
+        <td>{{c.couresId}}</td>
+        <td>{{c.courseName}}</td>
+        <td>{{c.courseDescription}}</td>
+        <td>{{c.courseDuration}}</td>
+        <td>{{c.courseStatus}}</td>
+        <td><button class="btn btn-success" (click)="getBtn(  $event )" [attr.data-index]=" c.couresId " >Edit</button></td>
+        <!-- <td> <button (click)="data(  c.couresId )">
+          Edits
+        </button> </td> -->
+        <!-- <td><a routerLink="/addcourse/{{c.couresId}}">Delete</a></td> -->
+        <!-- <td><button (click)="getBtn1(  $event )" [attr.data-index]=" c.couresId " >Delete</button></td> -->
+      
+        
+        
+        
+      <!-- <td><a routerlink="/courseenquiry"><i class="fa fa-edit" style="font-size: 15px; color:rgb(10,2,116); cursor:pointer;"></i></a></td> -->
+        <!-- <td>{{c.coursePrice}}</td>
+        <td>{{c.courseDesc}}</td>
+
+         routerLink="/editcourse/{{c.couresId}}" 
+
+        <td>{{c.courseStatus}}</td> -->
+        
+      </tr>
+      
+        
+    </tbody>
+  </table>
+ 

@@ -1,0 +1,68 @@
+<table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Course ID</th>
+            <!-- <th scope="col">Course Name</th> -->
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Qualification</th>
+            
+            <th scope="col">Age</th>
+            <th scope="col">TestScore</th>
+            <th scope="col">Enquiry Date</th>
+            <th scope="col">EnquiryStatus</th>
+            
+            
+            <!-- <th scope="col">Course Price</th>
+            <th scope="col">Course Description</th>
+            <th scope="col">Course Status</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of courses; let i=index;" >
+            
+            <td>{{c.courseId}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.email}}</td>
+            <td>{{c.phone}}</td>
+            <td>{{c.qualification}}</td>
+            <td>{{c.age}}</td>
+            <td>{{c.testScore}}</td>
+            <td>{{c.enquiryDate}}</td>
+            <td>{{c.enquityStatus}}</td>
+            <td><button type="button" (click)="getIndex($event)" [attr.data-index]=" i " class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Update Enquiry
+              </button></td>
+            <!-- <td><a routerLink="/courseenquiry/{{c.cEnquiryId}}">Update Status</a></td> -->
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+      </button> -->
+          <!-- <td><a routerlink="/courseenquiry"><i class="fa fa-edit" style="font-size: 15px; color:rgb(10,2,116); cursor:pointer;"></i></a></td> -->
+            <!-- <td>{{c.coursePrice}}</td>
+            <td>{{c.courseDesc}}</td>
+            <td>{{c.courseStatus}}</td> -->
+            
+          </tr>
+          
+            
+        </tbody>
+      </table>
+     <!-- Button trigger modal -->
+
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" (click)="hideModal()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" *ngIf="showModal">
+              <app-updatecenquiry [showModal]="showModal" [enquiry]="selectedEnquiry"></app-updatecenquiry>
+            </div>
+            
+          </div>
+        </div>
+      </div>

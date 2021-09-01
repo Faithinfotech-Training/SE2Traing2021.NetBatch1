@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <h1 class="display-4" >Courses</h1>
+    <hr class="my-4">
+    
+  </div>
+  <div class="row" >
+      <div class="col-sm-3" style="display: contents;">
+        <div class="card" style="width: 18rem; margin: 10px;" *ngFor="let c of courses">
+              <img class="card-img-top" src="assets/web.png" alt="Card image cap">
+          <div class="card-body">
+  
+            <b>{{c.couresId}}</b>
+            <h4 class="card-title"><p>{{c.courseName}}</p></h4>
+            <p>{{c.courseDescription}}</p>
+            <p>{{c.courseDuration}} Hrs</p>
+            <p>{{c.courseStatus}}</p>
+            <button class="btn btn-info" routerLink="/courseenquiry/{{c.couresId}}">Enquire</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>

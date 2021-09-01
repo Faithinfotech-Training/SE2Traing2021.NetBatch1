@@ -1,0 +1,35 @@
+<table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Resource ID</th>
+            <th scope="col">Resource Name</th>
+            <th scope="col">Resourse Status</th>
+            <th scope="col">Resource Record Date</th>
+            <th scope="col">Resource Type</th>
+            <th scope="col">Action</th>
+            
+            <!-- <th scope="col">Course Price</th>
+            <th scope="col">Course Description</th>
+            <th scope="col">Course Status</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of resources" >
+            
+            <td>{{c.resourceId}}</td>
+            <td>{{c.resourceName}}</td>
+            <td>{{c.resourceStatus}}</td>
+            <td>{{c.resRecordDate}}</td>
+            <td>{{c.resourceType}}</td>
+            <td><a routerLink="/resourceenquiry/{{c.resourceId}}">Enquire</a></td>
+          <!-- <td><a routerlink="/courseenquiry"><i class="fa fa-edit" style="font-size: 15px; color:rgb(10,2,116); cursor:pointer;"></i></a></td> -->
+            <!-- <td>{{c.coursePrice}}</td>
+            <td>{{c.courseDesc}}</td>
+            <td>{{c.courseStatus}}</td> -->
+            
+          </tr>
+          
+            
+        </tbody>
+      </table>
+      

@@ -1,0 +1,117 @@
+<!-- <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control"  formControlName="name">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input type="text" class="form-control"  formControlName="email">     
+      <label for="exampleInputEmail1" class="form-label">Phone</label>
+      <input type="text" class="form-control"  formControlName="phone">
+      <label for="exampleInputEmail1" class="form-label">Qualification</label>
+      <input type="text" class="form-control"  formControlName="qualification">
+      <label for="exampleInputEmail1" class="form-label">Age</label>
+      <input type="text" class="form-control" formControlName="age" >
+      <label for="exampleInputEmail1" class="form-label">Test Score</label>
+      <input type="text" class="form-control"  formControlName="testScore">
+      <label for="exampleInputEmail1" class="form-label">Enquiry Date</label>     
+      <input type="text" class="form-control"  formControlName="enquiryDate">
+      <label for="exampleInputEmail1" class="form-label">Enquiry Status</label>
+      <input type="text" class="form-control"  formControlName="enquityStatus">
+      <label for="exampleInputEmail1" class="form-label">Course Id</label>
+      <input type="text" class="form-control" formControlName="courseId" >
+      
+    </div>
+    
+    
+    <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+  </form>  -->
+
+
+
+
+  <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h3 class="display-4" >Course Enquiry</h3>
+        <hr class="my-4"></div>
+
+<div class="container">
+  <form  [formGroup]="enquiryForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" class="form-control"  formControlName="name">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="text" class="form-control"  formControlName="email">     
+          <label for="exampleInputEmail1" class="form-label">Phone</label>
+          <input type="text" class="form-control"  formControlName="phone">
+          <div *ngIf="phoneError">
+              {{ phoneError }}
+          </div>
+          <label for="exampleInputEmail1" class="form-label">Qualification</label>
+          <input type="text" class="form-control"  formControlName="qualification">
+          <label for="exampleInputEmail1" class="form-label">Age</label>
+          <input type="text" class="form-control" formControlName="age" >
+          <div *ngIf="ageError">
+              {{ ageError }}
+          </div>
+          <label for="exampleInputEmail1" class="form-label">Test Score</label>
+          <input type="text" class="form-control"  formControlName="testScore">
+          <div *ngIf="scoreError">
+              {{ scoreError }}
+          </div>
+          <label for="exampleInputEmail1" class="form-label">Enquiry Date</label>     
+          <input type="date" class="form-control"  formControlName="enquiryDate">
+          <label for="exampleInputEmail1" class="form-label">Enquiry Status</label>
+          <input type="text" class="form-control"  formControlName="enquityStatus">
+          <label for="exampleInputEmail1" class="form-label">Course Id</label>
+          <input type="text" class="form-control" formControlName="courseId" [disabled]="true" >
+          
+          
+          
+          
+          
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+  </form>
+</div>
+
+</body>
+</html>
